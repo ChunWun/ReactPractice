@@ -1,4 +1,4 @@
-import ExpenseBlock from "./components/ExpenseBlock.js";
+import ExpenseBlock from "./components/Expenses/ExpenseBlock.js";
 
 function App() {
 

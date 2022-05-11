@@ -1,6 +1,6 @@
 import ExpenseItem from "./ExpenseItem.js";
 import "./ExpenseBlock.css";
-import Card from "./Card.js";
+import Card from "../UI/Card.js";
 
 const ExpenseBlock = (props) => {
 	return (
