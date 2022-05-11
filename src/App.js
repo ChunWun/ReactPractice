@@ -1,18 +1,19 @@
-import ExpenseItem from "./components/ExpenseItem.js";
+import ExpenseBlock from "./components/ExpenseBlock.js";
 
 function App() {
 
-	//TODO
-	const expenseItem = {
-		date: new Date(2022, 5, 11),
-		title: 'mask',
-		price: 50
-	}
+	const expenses = [
+		{
+			id: 'e1',
+			title: 'Toilet Paper',
+			price: 94.12,
+			date: new Date(2020, 7, 14),
+		}
+	];
 
 	return (
 		<div>
-			<h2>Let's get started!</h2>
-			<ExpenseItem date={expenseItem.date} title={expenseItem.title} price={expenseItem.price} />
+			<ExpenseBlock items={expenses} />
 		</div>
 	);
 }
