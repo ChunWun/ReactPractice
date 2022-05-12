@@ -1,4 +1,5 @@
 import ExpenseBlock from "./components/Expenses/ExpenseBlock.js";
+import NewExpense from "./components/NewExpense/NewRxpense.js";
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
 
 	return (
 		<div>
+			<NewExpense />
 			<ExpenseBlock items={expenses} />
 		</div>
 	);
