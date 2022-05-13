@@ -4,39 +4,31 @@ import NewExpense from "./components/NewExpense/NewRxpense.js";
 
 function App() {
 
-	// const [expenses, setExpensesList] = useState(
-	// 	[
-	// 		{
-	// 			id: 'e1',
-	// 			title: 'Toilet Paper',
-	// 			price: 94.12,
-	// 			date: new Date(2020, 7, 14),
-	// 		}
-	// 	]
-	// );
-
-	const expenses = [
-		{
-			id: 'e1',
-			title: 'Toilet Paper',
-			price: 94.12,
-			date: new Date(2020, 7, 14),
-		}
-	];
+	const [expenses, setExpensesList] = useState(
+		[
+			{
+				id: 'e1',
+				title: 'Toilet Paper',
+				price: 94.12,
+				date: new Date(2020, 7, 14),
+			}
+		]
+	);
 
 	const onAddExpenseHandler = (newExpense) => {
-		// setExpensesList((prevState) => {
-		// 	return ({
-		// 		...prevState,
+		setExpensesList((prevState) => {
+			return ([
+				...prevState,
+				{
+					id: newExpense.id,
+					title: newExpense.title,
+					price: newExpense.price.toString(),
+					date: new Date(newExpense.date),
 
-		// 		newExpense
+				}
+			])
 
-		// 	})
-
-		// });
-
-		expenses.push(newExpense);
-		console.log(expenses);
+		});
 	}
 
 	return (

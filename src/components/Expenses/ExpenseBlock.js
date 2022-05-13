@@ -3,7 +3,6 @@ import "./ExpenseBlock.css";
 import Card from "../UI/Card.js";
 
 const ExpenseBlock = (props) => {
-	console.log(props.items)
 	return (
 		<Card className="expense-block">
 			{props.items.map((expenseItem) => {
