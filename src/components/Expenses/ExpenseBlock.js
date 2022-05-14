@@ -12,7 +12,7 @@ const ExpenseBlock = (props) => {
 
 	const onSlectYearHandler = (event) => {
 		setSlectYear(event);
-		checkShowExpenses();
+		// checkShowExpenses();
 	}
 
 	const checkShowExpenses = () => {
@@ -22,7 +22,7 @@ const ExpenseBlock = (props) => {
 		// 	);
 		// });
 		// setShowExpenses();
-		showExpenses = props.items.filter(expenseItem => expenseItem.date.getFullYear() === year);
+		// showExpenses = props.items.filter(expenseItem => expenseItem.date.getFullYear() === year);
 		console.log(props.items);
 		console.log(showExpenses);
 	}
