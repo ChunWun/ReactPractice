@@ -7,20 +7,12 @@ import { useState } from "react";
 const ExpenseBlock = (props) => {
 
 	const [year, setSlectYear] = useState('2019');
-	const [showExpenses, setShowExpenses] = useState(props.items);
 
-	const onSlectYearHandler = (event) => {
-		setSlectYear(event);
-		checkShowExpenses(event);
+	const onSlectYearHandler = (selectYear) => {
+		setSlectYear(selectYear);
 	}
 
-	const checkShowExpenses = (year) => {
-		setShowExpenses(() => {
-			return (
-				props.items.filter(expenseItem => expenseItem.date.getFullYear().toString() === year)
-			);
-		});
-	}
+	const showExpenses = props.items.filter(expenseItem => expenseItem.date.getFullYear().toString() === year);
 
 	return (
 		<Card className="expense-block">
