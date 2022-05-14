@@ -7,14 +7,14 @@ const ExpensesFilter = (props) => {
 
 	const onSelectedHandler = (event) => {
 		setSelectYear(event.target.value);
-		props.selectYear(selectYear);
+		props.selectYear(event.target.value);
 	}
 
 	return (
 		<form className=".expenses-filter">
 			<div className=".expenses-filter__control">
 				<label className="expenses-filter label">Filter By Year</label>
-				<select name="selectYear" onChange={onSelectedHandler}>
+				<select name="selectYear" onChange={onSelectedHandler} value={selectYear}>
 					<option value="2019">2019</option>
 					<option value="2020">2020</option>
 					<option value="2021">2021</option>

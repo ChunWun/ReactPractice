@@ -6,25 +6,20 @@ import { useState } from "react";
 
 const ExpenseBlock = (props) => {
 
-	const [year, setSlectYear] = useState(2019);
-	// const [showExpenses, setShowExpenses] = useState(props.items);
-	let showExpenses = props.items;
+	const [year, setSlectYear] = useState('2019');
+	const [showExpenses, setShowExpenses] = useState(props.items);
 
 	const onSlectYearHandler = (event) => {
 		setSlectYear(event);
-		// checkShowExpenses();
+		checkShowExpenses(event);
 	}
 
-	const checkShowExpenses = () => {
-		// setShowExpenses((prevState) => {
-		// 	return (
-		// 		props.items.filter(expenseItem => expenseItem.date.getFullYear === year)
-		// 	);
-		// });
-		// setShowExpenses();
-		// showExpenses = props.items.filter(expenseItem => expenseItem.date.getFullYear() === year);
-		console.log(props.items);
-		console.log(showExpenses);
+	const checkShowExpenses = (year) => {
+		setShowExpenses(() => {
+			return (
+				props.items.filter(expenseItem => expenseItem.date.getFullYear().toString() === year)
+			);
+		});
 	}
 
 	return (
