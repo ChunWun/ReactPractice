@@ -2,18 +2,18 @@ import ExpenseItem from "./ExpenseItem.js";
 import "./ExpenseBlock.css";
 import Card from "../UI/Card.js";
 import ExpensesFilter from "../ExpensesFilter/ExpensesFilter.js";
+import Chart from "../Chart/Chart.js";
 import { useState } from "react";
 
 const ExpenseBlock = (props) => {
-
 	const [year, setSlectYear] = useState('2019');
+	let expenses = props.items.filter(expenseItem => expenseItem.date.getFullYear().toString() === year);
 
 	const onSlectYearHandler = (selectYear) => {
 		setSlectYear(selectYear);
 	}
 
 	const showExpenses = () => {
-		let expenses = props.items.filter(expenseItem => expenseItem.date.getFullYear().toString() === year);
 		if(expenses.length > 0) {
 			return (
 				<li className="expenses-list">
@@ -36,6 +36,7 @@ const ExpenseBlock = (props) => {
 
 	return (
 		<Card className="expense-block">
+			<Chart 	items={expenses}/>
 			<ExpensesFilter selectYear={onSlectYearHandler} />
 			{showExpenses()}
 		</Card>

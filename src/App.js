@@ -17,6 +17,12 @@ function App() {
 				title: 'Toilet',
 				price: 94.12,
 				date: new Date(2019, 7, 14),
+			},
+			{
+				id: 'e3',
+				title: 'Toilet',
+				price: 20,
+				date: new Date(2019, 3, 13),
 			}
 		]
 	);
