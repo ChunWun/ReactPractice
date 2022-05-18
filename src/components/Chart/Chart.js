@@ -21,8 +21,8 @@ const Chart = ( props ) => {
     const showChartBar = () => {
         let totalValue = 0;
         props.items.forEach((item)=> {
-            chartData[item.date.getMonth()].value += item.price;
-            totalValue += item.price;
+            chartData[item.date.getMonth()].value += Number(item.price);
+            totalValue += Number(item.price);
         })
 
         return(
